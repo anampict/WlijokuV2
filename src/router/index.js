@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'rak-sayur',
       component: () => import('../views/RakSayurView.vue'),
     },
+    {
+      path: '/rak-sayur/:id',
+      name: 'product-detail',
+      component: () => import('../views/ProductDetailView.vue'),
+    },
   ],
 })
 

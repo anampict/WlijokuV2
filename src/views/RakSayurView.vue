@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
+import { RouterLink } from 'vue-router'
 import { ShoppingBasket } from 'lucide-vue-next'
 import TheNavbar from '../components/layout/TheNavbar.vue'
 import TheFooter from '../components/layout/TheFooter.vue'
@@ -51,9 +52,10 @@ const filteredProducts = computed(() => {
 
       <!-- Product Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div
+        <RouterLink
           v-for="product in filteredProducts"
           :key="product.id"
+          :to="`/rak-sayur/${product.id}`"
           class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow"
         >
           <!-- Image -->
@@ -84,7 +86,7 @@ const filteredProducts = computed(() => {
               </button>
             </div>
           </div>
-        </div>
+        </RouterLink>
       </div>
     </main>
 
