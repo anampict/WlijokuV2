@@ -9,6 +9,11 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
+    {
+      path: '/rak-sayur',
+      name: 'rak-sayur',
+      component: () => import('../views/RakSayurView.vue'),
+    },
   ],
 })
 

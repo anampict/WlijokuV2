@@ -15,17 +15,14 @@ defineProps({
   >
     <!-- Image -->
     <div class="relative">
-      <!--
-        TODO: Ganti div placeholder dengan tag img setelah import gambar:
+      
+      
         <img
           :src="product.image"
           :alt="product.name"
           class="w-full aspect-square object-cover"
         />
-      -->
-      <div class="w-full aspect-square bg-gray-100 flex items-center justify-center text-gray-400 text-xs">
-        [{{ product.name }}]
-      </div>
+     
 
       <!-- Badge (ORGANIK / HIDROPONIK) -->
       <span

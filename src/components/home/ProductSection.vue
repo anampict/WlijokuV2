@@ -15,7 +15,7 @@ const products = [
     badge: 'ORGANIK',
     category: 'Daun Hijau',
     inCart: false,
-    // image: new URL('@/assets/images/dhanikun.jpg', import.meta.url).href,
+    image: new URL('@/assets/images/ketumbar.jpg', import.meta.url).href,
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const products = [
     badge: 'HIDROPONIK',
     category: 'Daun Hijau',
     inCart: true,
-    // image: new URL('@/assets/images/bayam.jpg', import.meta.url).href,
+    image: new URL('@/assets/images/ketumbar.jpg', import.meta.url).href,
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const products = [
     badge: null,
     category: 'Umbi-umbian',
     inCart: false,
-    // image: new URL('@/assets/images/wortel.jpg', import.meta.url).href,
+    image: new URL('@/assets/images/ketumbar.jpg', import.meta.url).href,
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const products = [
     badge: null,
     category: 'Buah Sayur',
     inCart: false,
-    // image: new URL('@/assets/images/tomat-cherry.jpg', import.meta.url).href,
+    image: new URL('@/assets/images/ketumbar.jpg', import.meta.url).href,
   },
 ]
 

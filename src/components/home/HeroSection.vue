@@ -46,19 +46,15 @@ import { Truck } from 'lucide-vue-next'
 
         <!-- Right Image -->
         <div class="flex-1 relative">
-          <!--
-            TODO: Ganti div placeholder di bawah dengan tag img setelah import gambar:
+          
+           
             <img
               src="@/assets/images/hero-vegetables.jpg"
               alt="Sayur Segar dalam Keranjang"
               class="w-full aspect-square rounded-2xl object-cover"
             />
-          -->
-          <div
-            class="w-full aspect-square bg-gray-200 rounded-2xl flex items-center justify-center text-gray-400 text-sm"
-          >
-            [Gambar Hero – Sayur dalam Keranjang]
-          </div>
+         
+          
 
           <!-- Floating delivery badge -->
           <div
