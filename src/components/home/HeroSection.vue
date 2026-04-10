@@ -1,5 +1,6 @@
 <script setup>
 import { Truck } from 'lucide-vue-next'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -39,16 +40,18 @@ import { Truck } from 'lucide-vue-next'
             class="flex items-center gap-4 animate-fade-in-up"
             style="animation-delay: 0.7s"
           >
-            <button
+            <RouterLink
+              to="/rak-sayur"
               class="px-6 py-3 bg-green-900 text-white text-sm font-semibold rounded-lg hover:bg-green-800 hover:scale-105 active:scale-95 transition-all duration-200"
             >
               Pesan Sekarang
-            </button>
-            <button
+            </RouterLink>
+            <RouterLink
+              to="/rak-sayur"
               class="px-6 py-3 border border-gray-800 text-gray-800 text-sm font-semibold rounded-lg hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all duration-200"
             >
               Lihat Katalog
-            </button>
+            </RouterLink>
           </div>
         </div>
 
