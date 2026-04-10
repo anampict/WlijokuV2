@@ -299,7 +299,7 @@ function closePopup() {
 
           <!-- CTA -->
           <button
-            @click="closePopup"
+            @click="() => { closePopup(); router.push({ name: 'home' }) }"
             class="w-full py-3 bg-green-800 text-white text-sm font-semibold rounded-full hover:bg-green-700 transition-colors mb-3"
           >
             Kembali ke Beranda
