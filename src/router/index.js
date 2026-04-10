@@ -24,6 +24,11 @@ const router = createRouter({
       name: 'keranjang',
       component: () => import('../views/KeranjangView.vue'),
     },
+    {
+      path: '/konfirmasi-pesanan',
+      name: 'konfirmasi-pesanan',
+      component: () => import('../views/KonfirmasiPesananView.vue'),
+    },
   ],
 })
 

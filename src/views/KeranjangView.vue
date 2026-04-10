@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { Trash2, Minus, Plus, ShieldCheck, Truck, Leaf } from 'lucide-vue-next'
 import TheNavbar from '../components/layout/TheNavbar.vue'
 import TheFooter from '../components/layout/TheFooter.vue'
@@ -47,6 +47,11 @@ const total = computed(() => subtotal.value + shipping - discount)
 
 function formatRp(value) {
   return 'Rp. ' + value.toLocaleString('id-ID')
+}
+
+const router = useRouter()
+function pesanSekarang() {
+  router.push({ name: 'konfirmasi-pesanan' })
 }
 </script>
 
@@ -184,6 +189,7 @@ function formatRp(value) {
           </div>
 
           <button
+            @click="pesanSekarang"
             class="mt-5 w-full py-3 bg-green-800 text-white font-semibold text-sm rounded-full hover:bg-green-700 transition"
           >
             Pesan Sekarang
