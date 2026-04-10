@@ -62,11 +62,12 @@ const menuOpen = ref(false)
         </RouterLink>
 
         <!-- Masuk button (desktop) -->
-        <button
+        <RouterLink
+          to="/login"
           class="hidden md:inline-flex px-5 py-2 bg-green-900 text-white text-sm font-semibold rounded-full hover:bg-green-800 transition-colors"
         >
           Masuk
-        </button>
+        </RouterLink>
 
         <!-- Hamburger (mobile) -->
         <button
@@ -112,11 +113,13 @@ const menuOpen = ref(false)
       </div>
 
       <!-- Masuk button -->
-      <button
-        class="w-full py-2.5 bg-green-900 text-white text-sm font-semibold rounded-full hover:bg-green-800 transition-colors"
+      <RouterLink
+        to="/login"
+        class="w-full py-2.5 bg-green-900 text-white text-sm font-semibold rounded-full hover:bg-green-800 transition-colors text-center block"
+        @click="menuOpen = false"
       >
         Masuk
-      </button>
+      </RouterLink>
     </div>
   </nav>
 </template>

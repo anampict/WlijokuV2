@@ -34,6 +34,11 @@ const router = createRouter({
       name: 'verifikasi-pembayaran',
       component: () => import('../views/VerifikasiPembayaranView.vue'),
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue'),
+    },
   ],
 })
 
