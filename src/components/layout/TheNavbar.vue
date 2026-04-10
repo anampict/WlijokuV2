@@ -47,9 +47,15 @@ const route = useRoute()
 
       <!-- Actions -->
       <div class="flex items-center gap-3">
-        <button class="p-2 text-gray-500 hover:text-gray-900 transition-colors">
+        <RouterLink
+          to="/keranjang"
+          class="relative p-2 text-gray-500 hover:text-gray-900 transition-colors"
+        >
           <ShoppingCart :size="20" />
-        </button>
+          <span class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-green-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+            2
+          </span>
+        </RouterLink>
         <button
           class="px-5 py-2 bg-green-900 text-white text-sm font-semibold rounded-full hover:bg-green-800 transition-colors"
         >

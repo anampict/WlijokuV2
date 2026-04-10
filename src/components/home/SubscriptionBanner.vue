@@ -32,7 +32,7 @@ import { Leaf } from 'lucide-vue-next'
         <div class="flex items-center justify-center z-10">
           <div class="w-40 h-40 bg-[#a8dbb0] rounded-full flex items-center justify-center">
             <div class="w-28 h-28 bg-[#b8e5c0] rounded-full flex items-center justify-center">
-              <Leaf :size="48" class="text-green-800" />
+              <Leaf :size="70" class="text-green-800" />
             </div>
           </div>
         </div>

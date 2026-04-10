@@ -9,7 +9,7 @@ const activeCategory = ref('Semua')
 const products = [
   {
     id: 1,
-    name: 'Dhanikun',
+    name: 'Ketumbar',
     description: 'Ketumbar segar per 250gr',
     price: 'Rp 8.500',
     badge: 'ORGANIK',
