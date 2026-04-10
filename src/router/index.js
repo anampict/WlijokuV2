@@ -29,6 +29,11 @@ const router = createRouter({
       name: 'konfirmasi-pesanan',
       component: () => import('../views/KonfirmasiPesananView.vue'),
     },
+    {
+      path: '/verifikasi-pembayaran',
+      name: 'verifikasi-pembayaran',
+      component: () => import('../views/VerifikasiPembayaranView.vue'),
+    },
   ],
 })
 

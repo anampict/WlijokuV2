@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { Check, Copy, Truck, ShoppingBasket, Landmark } from 'lucide-vue-next'
 import TheFooter from '../components/layout/TheFooter.vue'
 
@@ -19,6 +19,11 @@ function copyBank() {
 // Animation states
 const showCheck = ref(false)
 const showContent = ref(false)
+
+const router = useRouter()
+function goToVerifikasi() {
+  router.push({ name: 'verifikasi-pembayaran' })
+}
 
 onMounted(() => {
   setTimeout(() => (showCheck.value = true), 100)
@@ -159,6 +164,7 @@ onMounted(() => {
 
             <!-- Confirm button -->
             <button
+              @click="goToVerifikasi"
               class="mt-5 w-full py-3 bg-green-800 text-white text-sm font-semibold rounded-full hover:bg-green-700 transition-colors"
             >
               Konfirmasi Pembayaran
