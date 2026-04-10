@@ -152,7 +152,7 @@ async function handleLogin() {
         <!-- Register link -->
         <p class="text-sm text-center text-gray-400 mt-6">
           Belum punya akun?
-          <RouterLink to="/" class="text-green-700 font-bold hover:underline ml-1">Daftar Sekarang</RouterLink>
+          <RouterLink to="/daftar" class="text-green-700 font-bold hover:underline ml-1">Daftar Sekarang</RouterLink>
         </p>
       </div>
     </div>
