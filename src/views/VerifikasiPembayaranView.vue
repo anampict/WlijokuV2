@@ -1,8 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { RouterLink } from 'vue-router'
-import { UploadCloud, Send, ShieldCheck, ChevronDown, Landmark } from 'lucide-vue-next'
+import { UploadCloud, Send, ShieldCheck, ChevronDown, Landmark, CheckCircle2, ShoppingBag } from 'lucide-vue-next'
 
 const router = useRouter()
 
@@ -15,6 +15,8 @@ const uploadedPreview = ref(null)
 const isDragging = ref(false)
 const isSubmitting = ref(false)
 const errorMsg = ref('')
+const showPopup = ref(false)
+const popupVisible = ref(false)
 
 const banks = ['Bank Mandiri', 'Bank BCA', 'Bank BNI', 'Bank BRI', 'Bank BSI']
 
@@ -74,7 +76,14 @@ async function submit() {
   // Simulate async submit
   await new Promise((r) => setTimeout(r, 1200))
   isSubmitting.value = false
-  router.push({ name: 'konfirmasi-pesanan' })
+  showPopup.value = true
+  await nextTick()
+  setTimeout(() => (popupVisible.value = true), 30)
+}
+
+function closePopup() {
+  popupVisible.value = false
+  setTimeout(() => (showPopup.value = false), 300)
 }
 </script>
 
@@ -257,5 +266,64 @@ async function submit() {
         </div>
       </div>
     </footer>
+
+    <!-- Success Popup Overlay -->
+    <Teleport to="body">
+      <div
+        v-if="showPopup"
+        class="fixed inset-0 z-50 flex items-center justify-center px-4 transition-all duration-300"
+        :class="popupVisible ? 'bg-black/40 backdrop-blur-sm' : 'bg-transparent'"
+        @click.self="closePopup"
+      >
+        <div
+          class="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-8 flex flex-col items-center text-center transition-all duration-300"
+          :class="popupVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-6'"
+        >
+          <!-- Animated check icon -->
+          <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-5 animate-bounce-once">
+            <CheckCircle2 :size="44" class="text-green-600" stroke-width="1.5" />
+          </div>
+
+          <!-- Text -->
+          <h2 class="text-xl font-extrabold text-gray-900 mb-2">Pesanan Akan Segera Diproses!</h2>
+          <p class="text-sm text-gray-500 leading-relaxed mb-6">
+            Terima kasih telah berbelanja di toko kami.<br />
+            Tim kami akan memverifikasi pembayaran Anda dan mempersiapkan sayuran segar pilihan Anda.
+          </p>
+
+          <!-- Order badge -->
+          <div class="flex items-center gap-2 bg-green-50 border border-green-100 rounded-xl px-4 py-2.5 mb-6 w-full justify-center">
+            <ShoppingBag :size="15" class="text-green-600" />
+            <span class="text-sm font-semibold text-green-700">{{ orderNumber || '#WJ-2024001' }}</span>
+          </div>
+
+          <!-- CTA -->
+          <button
+            @click="closePopup"
+            class="w-full py-3 bg-green-800 text-white text-sm font-semibold rounded-full hover:bg-green-700 transition-colors mb-3"
+          >
+            Kembali ke Beranda
+          </button>
+          <RouterLink
+            to="/keranjang"
+            class="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+            @click="closePopup"
+          >
+            Lihat status pesanan saya
+          </RouterLink>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
+
+<style scoped>
+@keyframes bounce-once {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-12px); }
+  60% { transform: translateY(-5px); }
+}
+.animate-bounce-once {
+  animation: bounce-once 0.7s ease 0.2s both;
+}
+</style>
