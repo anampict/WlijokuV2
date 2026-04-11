@@ -35,6 +35,11 @@ const router = createRouter({
       component: () => import('../views/VerifikasiPembayaranView.vue'),
     },
     {
+      path: '/testimoni',
+      name: 'testimoni',
+      component: () => import('../views/TestimoniView.vue'),
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue'),

@@ -34,6 +34,18 @@ const menuOpen = ref(false)
         >
           Rak Sayur
         </RouterLink>
+
+        <RouterLink
+          to="/testimoni"
+          class="text-sm font-semibold transition-colors"
+          :class="
+            route.name === 'testimoni'
+              ? 'text-gray-900 underline underline-offset-4'
+              : 'text-gray-500 hover:text-gray-900'
+          "
+        >
+          Testimoni
+        </RouterLink>
       </div>
 
       <!-- Search (desktop) -->
@@ -109,6 +121,14 @@ const menuOpen = ref(false)
           @click="menuOpen = false"
         >
           Rak Sayur
+        </RouterLink>
+        <RouterLink
+          to="/testimoni"
+          class="py-2 px-3 rounded-xl text-sm font-semibold transition-colors"
+          :class="route.name === 'testimoni' ? 'bg-green-50 text-green-700' : 'text-gray-600 hover:bg-gray-50'"
+          @click="menuOpen = false"
+        >
+          Testimoni
         </RouterLink>
       </div>
 
