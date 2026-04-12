@@ -6,9 +6,9 @@ import { RouterLink } from 'vue-router'
 <template>
   <section class="bg-[#EFF7F2] py-16 overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-16">
+      <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
         <!-- Left Content -->
-        <div class="flex-1 animate-fade-in-left">
+        <div class="flex-1 w-full animate-fade-in-left">
           <!-- Badge -->
           <div
             class="inline-flex items-center gap-2 px-3 py-1.5 bg-green-100 text-green-700 rounded-full text-xs font-bold mb-6 animate-bounce-subtle"
@@ -56,7 +56,7 @@ import { RouterLink } from 'vue-router'
         </div>
 
         <!-- Right Image -->
-        <div class="flex-1 relative animate-fade-in-right">
+        <div class="flex-1 w-full relative animate-fade-in-right">
           <!-- Decorative blob behind image -->
           <div
             class="absolute inset-0 rounded-2xl bg-green-200/40 scale-105 blur-2xl animate-pulse-slow"

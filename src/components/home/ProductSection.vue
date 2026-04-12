@@ -60,7 +60,7 @@ const filteredProducts = computed(() =>
   <section class="py-16">
     <div class="max-w-6xl mx-auto px-6">
       <!-- Header -->
-      <div class="flex items-end justify-between mb-8">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-8">
         <div>
           <h2 class="text-3xl font-extrabold text-gray-900">
             Pilihan Sayur <span class="text-green-600">Minggu Ini</span>
@@ -77,7 +77,7 @@ const filteredProducts = computed(() =>
       </div>
 
       <!-- Product Grid -->
-      <div class="grid grid-cols-4 gap-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
         <ProductCard v-for="product in filteredProducts" :key="product.id" :product="product" />
       </div>
     </div>

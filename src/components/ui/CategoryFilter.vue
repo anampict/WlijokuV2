@@ -14,7 +14,7 @@ defineEmits(['update:activeCategory'])
 </script>
 
 <template>
-  <div class="flex items-center gap-2">
+  <div class="flex flex-wrap items-center gap-2">
     <button
       v-for="cat in categories"
       :key="cat"

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { ShoppingCart, Search, Menu, X } from 'lucide-vue-next'
+import { Bell } from 'lucide-vue-next'
 
 const route = useRoute()
 const menuOpen = ref(false)
@@ -70,6 +71,16 @@ const menuOpen = ref(false)
           <ShoppingCart :size="20" />
           <span class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-green-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center">
             2
+          </span>
+        </RouterLink>
+        <!-- notification -->
+        <RouterLink
+          to="/notifikasi"
+          class="relative p-2 text-gray-500 hover:text-gray-900 transition-colors"
+        >
+          <Bell :size="20" />
+          <span class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-red-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+            3
           </span>
         </RouterLink>
 
